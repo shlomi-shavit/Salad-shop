@@ -1,0 +1,121 @@
+
+.page_wrapper {
+
+    width: 500px;
+    margin-left: 3%;
+    color: #414141;
+
+    @media (max-width:500px) {
+        width: 90%;
+        margin: auto;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        background: #fff;
+
+        @media (max-width:500px) {
+            flex-direction: column;
+        }
+    
+        section{
+            padding: 20px;
+        }
+
+        // .ingridiant_list {
+    
+            table {
+                border-collapse: collapse;
+                min-width: 200px;
+                
+                @media (max-width:500px) {
+                    width: 90%;
+                    margin: auto;
+                }
+                tbody tr{
+                    &:hover {
+                        background: #d64484;
+                        color: #fff;
+                        text-shadow: 0 1px 6px #ffffff;
+                    }
+                }
+                td { cursor: pointer; }
+                th { 
+                    border-right: solid 1px #cecece;
+                    color: #eb5395;
+                    &:last-of-type{
+                        border-right: 0;
+                    }
+                }
+                th, td { padding: 5px 15px; }
+        
+                td:last-of-type {
+                    text-align: right;
+                }
+            }
+            table, td, th {
+                border-bottom: 1px solid #cecece;
+            }
+        // }
+    }
+
+    .buttons {
+        display: flex;
+    }
+
+    .back {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 40px;
+        padding: 0 5px;
+        &:hover span{
+            position: relative;
+            animation: moveLeft 1s infinite;
+        }
+
+        span {
+            font-size: 22px;
+        }
+        @keyframes moveLeft {
+            0%   {left: 0px;}
+            50% {left: -5px;}
+            100% {left: 0px;}
+          }
+    }
+
+    .btn{
+        background: #eb5395;
+        width: 200px;
+        line-height: 40px;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        font-size: 18px;
+        margin-left: auto;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+        &:hover {
+            background: #444444;
+        }
+        &.disabled, &:disabled {
+            background: #ccc;
+            color: #9c9999;
+            opacity: 0.8;
+            pointer-events: none;
+        }
+    }
+}
+
+.total_price {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: auto;
+    color: #7e7e7e;
+    color: #c8ac64;
+}

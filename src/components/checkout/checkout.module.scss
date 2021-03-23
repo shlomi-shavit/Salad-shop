@@ -1,0 +1,59 @@
+
+@import '../global-style.module.scss';
+
+.ingridiant_list {
+    
+    table {
+        margin: 20px 0 ;
+        tr{
+            pointer-events: none;
+        }
+    }
+}
+
+.page_wrapper .content {
+    section {
+        width: 50%;
+        box-sizing: border-box;
+    }
+    .form_wrapper {
+        background: #454444;
+        color: #fff;
+        padding: 10px 20px 20px;
+        font-size: 14px;
+    
+        form {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position:relative;
+        }
+    
+        input, textarea {
+            padding: 8px;
+            margin: 7px 0;
+            border: none;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+            outline: none;
+        }
+        .error {
+            border-bottom: solid 3px #ffa4a4;
+            margin-bottom: 0;
+        }
+        .error_message {
+            color: #ffc1c1;
+        }
+        button {
+            border:0 none;
+            // background: #d64484;
+            position: absolute;
+            bottom: -40px;
+            right: -20px;
+            &:not(:disabled){
+                background: #d64484;
+            }
+        }
+    }
+}
