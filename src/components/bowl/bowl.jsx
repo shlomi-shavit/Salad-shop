@@ -11,7 +11,7 @@ const Bowl = () => {
         saldeStoreExist ?
             Object.entries(saladStore.salad_ingridiants).map(ingridiant => {
                 return (
-                    <div key={ingridiant[0]} className={classes.[ingridiant[0]]}>
+                    <div key={ingridiant[0]} className={classes[ingridiant[0]]}>
                         {ingridiant[0]}
                     </div>
                 )
