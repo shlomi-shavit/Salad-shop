@@ -4,7 +4,7 @@
 .ingridiant_list {
     
     table {
-        margin: 20px 0 ;
+        margin: 40px 0 ;
         tr{
             pointer-events: none;
         }
@@ -51,8 +51,19 @@
             position: absolute;
             bottom: -40px;
             right: -20px;
+            &:before {
+                border: 1px solid #454444;
+                border-top: 0;
+                border-bottom: 0;
+            }
             &:not(:disabled){
-                background: #d64484;
+                // background: #d64484;
+            }
+            &:hover {
+                color: #fff;
+            }
+            &:hover:after {
+                background: #454444;
             }
         }
     }
