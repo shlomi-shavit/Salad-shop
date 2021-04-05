@@ -10,7 +10,7 @@ import { saladDetails } from "../../redux/actions";
 const Shop = () => {
 
     // Fetch data
-    const AllIngridiants = Object.entries(AllIngridiantsJson)[0][1];
+    const AllIngridiants = AllIngridiantsJson.items;
 
     // Redux
     const dispatch = useDispatch()
