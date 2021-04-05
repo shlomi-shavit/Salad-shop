@@ -39,7 +39,7 @@ const Shop = () => {
     const removeIngredient = (ingridiant) => {
         if (totalIngridiants[ingridiant][0] > 0) {
 
-            const ingridiantAmount = parseInt((totalIngridiants[ingridiant] || 0)) - 1;
+            const ingridiantAmount = parseInt(totalIngridiants[ingridiant]) - 1;
             const ingridiantPrice = AllIngridiants.find(ing => ing.name === ingridiant).price;
 
             totalIngridiants[ingridiant] = [ingridiantAmount, parseFloat(totalIngridiants[ingridiant][1] - ingridiantPrice).toFixed(2)];
