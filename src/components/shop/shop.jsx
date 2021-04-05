@@ -12,6 +12,7 @@ const Shop = () => {
     // Fetch data
     const AllIngridiants = AllIngridiantsJson.items;
 
+
     // Redux
     const dispatch = useDispatch()
     const saladStore = useSelector(state => state.saladReducer)
@@ -23,10 +24,10 @@ const Shop = () => {
 
     // Add Ingridiants & price
     const addIngredient = (ingridiant) => {
-        const ingridiantAmont = parseInt((totalIngridiants[ingridiant] || 0)) + 1;
+        const ingridiantAmount = parseInt((totalIngridiants[ingridiant] || 0)) + 1;
         const ingridiantPrice = AllIngridiants.find(ing => ing.name === ingridiant).price;
 
-        totalIngridiants[ingridiant] = [ingridiantAmont, parseFloat(ingridiantAmont * ingridiantPrice).toFixed(2)];
+        totalIngridiants[ingridiant] = [ingridiantAmount, parseFloat(ingridiantAmount * ingridiantPrice).toFixed(2)];
         setTotalIngridiants({ ...totalIngridiants });
 
         totalPrice += AllIngridiants.find(ing => ing.name === ingridiant).price;
@@ -38,10 +39,10 @@ const Shop = () => {
     const removeIngredient = (ingridiant) => {
         if (totalIngridiants[ingridiant][0] > 0) {
 
-            const ingridiantAmont = parseInt((totalIngridiants[ingridiant] || 0)) - 1;
+            const ingridiantAmount = parseInt((totalIngridiants[ingridiant] || 0)) - 1;
             const ingridiantPrice = AllIngridiants.find(ing => ing.name === ingridiant).price;
 
-            totalIngridiants[ingridiant] = [ingridiantAmont, parseFloat(totalIngridiants[ingridiant][1] - ingridiantPrice).toFixed(2)];
+            totalIngridiants[ingridiant] = [ingridiantAmount, parseFloat(totalIngridiants[ingridiant][1] - ingridiantPrice).toFixed(2)];
 
             if (totalIngridiants[ingridiant][0] <= 0) {
                 delete totalIngridiants[ingridiant]
